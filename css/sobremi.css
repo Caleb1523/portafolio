@@ -66,6 +66,19 @@ html {
     color: #1cb698;
 }
 
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #1cb698;
+    margin-left: auto;
+    border-radius: 20px;
+}
+
 .sobremi {
     background-size: cover;
     background-position: center;
@@ -139,45 +152,45 @@ html {
     background-color: #1cb698;
 }
 
-/* Para tablets */
-@media (max-width: 992px) {
-    .container-header header {
-        padding: 15px 30px;
-    }
-
-    .skills h2 {
-        font-size: 36px;
-    }
-
-    .skills .fila {
-        gap: 20px;
-    }
-}
-
-/* Para móviles */
+/*responsive menu navar*/
 @media (max-width: 768px) {
-    .container-header header {
-        flex-direction: column;
-        padding: 10px 20px;
+    #menu-toggle {
+        display: none;
     }
 
-    .container-header header nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .container-header header nav ul li a {
-        margin: 10px 0;
-        font-size: 16px;
-    }
-
-    .skills h2 {
+    .menu-icon {
+        display: block;
         font-size: 28px;
+        cursor: pointer;
+        color: #1cb698; /*color logo*/
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 300;
     }
 
-    .skills .fila {
+    /*menu oculto*/
+    .container-header header .val ul {
+        display: none;
         flex-direction: column;
-        gap: 30px;
+        background-color:rgb(61, 63, 63);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        padding: 10px 0;
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgb(58, 61, 62);
+        z-index: 250;
+    }
+
+    /*mostrar menu al activar*/
+    #menu-toggle:checked ~ .nav ul {
+        display: flex;
+    }
+
+    .container-header header .nav ul li {
+        margin: 5px 0;
     }
 }
 
