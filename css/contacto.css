@@ -18,7 +18,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background: linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)),
-                url(../img/fondo.jpg);
+    url(../img/fondo.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -73,7 +73,6 @@ body {
 
 .contacto {
   padding: 100px 32px;
-  background-color: #151515;
   color: #fff;  
   text-align: center;
 }
@@ -90,12 +89,59 @@ body {
   margin-bottom: 16px;
 }
 
+.contacto-flex {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.formulario {
+  background: rgba(0, 0, 0, 0.85); /* negro semitransparente */
+  padding: 30px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  width: 500px; /* ancho fijo opcional */
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6); /* sombra para resaltar */
+}
+
+.formulario input,
+.formulario textarea,
+.formulario button {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.formulario textarea {
+  height: 120px;
+}
+.formulario button {
+  background: #1cb698;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.formulario button:hover {
+  background: #17a387;
+}
+
+
 /* — Mapa — */
 .mapa {
-  width: 52%;
-  border-radius: 12px;
+  box-shadow: 5px 5px 30px rgba(255, 255, 255, 1);
+  width: 38%;
+  border-radius: 30px;
   overflow: hidden;
-  height: 420px;
+  height: 360px;
 }
 
 .mapa iframe {
