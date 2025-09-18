@@ -215,3 +215,76 @@ footer .redes a:hover {
     border-color: #1cb698;
     transform: scale(1.1);
 }
+
+/* Ocultar checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Estilo del icono hamburguesa */
+.menu-icon {
+    display: none; /* por defecto oculto */
+    font-size: 28px;
+    cursor: pointer;
+    color: #1cb698;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 300;
+}
+
+/* Menú oculto en pantallas pequeñas */
+.container-header header nav {
+    display: flex; /* por defecto en desktop */
+}
+
+/* MEDIA QUERY para pantallas menores o iguales a 992px */
+@media (max-width: 992px) {
+    .menu-icon {
+        display: block;
+    }
+
+    /* Ocultar el menú nav inicialmente */
+    .container-header header nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 220px;
+        background: rgba(40, 40, 40, 0.6);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 10px;
+        padding: 15px 0;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        flex-direction: column;
+        z-index: 250;
+    }
+
+    /* Mostrar el menú cuando checkbox esté marcado */
+    #menu-toggle:checked ~ nav {
+        display: flex;
+    }
+
+    /* Ajuste de la lista para menú vertical */
+    .container-header header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding-left: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .container-header header nav ul li {
+        margin: 8px 0;
+    }
+
+    .container-header header nav ul li a {
+        font-size: 18px;
+        color: white;
+        margin-left: 0;
+        display: block;
+        padding: 6px 20px;
+    }
+}

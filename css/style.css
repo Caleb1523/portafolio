@@ -160,69 +160,75 @@ font-size: 18px;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    .container-header header {
-        flex-direction: column;
-        padding: 10px;
-        align-items: flex-start; /* logo bien pegado a la izquierda */
+/* Ocultar checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Estilo del icono hamburguesa */
+.menu-icon {
+    display: none; /* por defecto oculto */
+    font-size: 28px;
+    cursor: pointer;
+    color: #1cb698;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 300;
+}
+
+/* Menú oculto en pantallas pequeñas */
+.container-header header nav {
+    display: flex; /* por defecto en desktop */
+}
+
+/* MEDIA QUERY para pantallas menores o iguales a 992px */
+@media (max-width: 992px) {
+    .menu-icon {
+        display: block;
     }
 
-    /* Menú en 2 columnas */
+    /* Ocultar el menú nav inicialmente */
+    .container-header header nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 220px;
+        background: rgba(40, 40, 40, 0.6);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 10px;
+        padding: 15px 0;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        flex-direction: column;
+        z-index: 250;
+    }
+
+    /* Mostrar el menú cuando checkbox esté marcado */
+    #menu-toggle:checked ~ nav {
+        display: flex;
+    }
+
+    /* Ajuste de la lista para menú vertical */
     .container-header header nav ul {
-        display: grid;
-        grid-template-columns: auto auto; /* dos columnas */
-        gap: 1px 20px;
-        justify-content: center;
-        width: 100%;
-        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding-left: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .container-header header nav ul li {
+        margin: 8px 0;
     }
 
     .container-header header nav ul li a {
+        font-size: 18px;
+        color: white;
+        margin-left: 0;
         display: block;
-        padding: 4px;
-    }
-
-    .container-header header .logo a {
-        font-size: 28px;
-        margin-bottom: 15px; /* separa un poco el logo del menú */
-    }
-
-    .inicio {
-        padding-top: 100px;
-        text-align: center;
-    }
-
-    .inicio .container-banner {
-        max-width: 90%;
-        padding: 15px;
-    }
-
-    .inicio .container-banner h1 {
-        font-size: 28px;
-    }
-
-    .inicio .container-banner h2 {
-        font-size: 14px;
-    }
-
-    .container-banner .redes {
-        flex-wrap: wrap;
-        gap: 10px;
+        padding: 6px 20px;
     }
 }
-
-@media (max-width: 480px) {
-.container-header header .logo a {
-    font-size: 22px;
-}
-.inicio .container-banner h1 {
-    font-size: 22px;
-}
-.inicio .container-banner h2 {
-    font-size: 12px;
-}
-footer {
-    padding: 10px 0;
-}
-}
-
